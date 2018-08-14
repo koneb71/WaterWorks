@@ -11,6 +11,9 @@ $(function () {
      * Get access to plugins
      */
 
+    $('.selectClient').select2();
+    $('.selectEmployee').select2();
+
     $('[data-toggle="control-sidebar"]').controlSidebar()
     $('[data-toggle="push-menu"]').pushMenu()
     var $pushMenu = $('[data-toggle="push-menu"]').data('lte.pushmenu')

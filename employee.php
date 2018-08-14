@@ -1,8 +1,27 @@
 <?php include 'base.php' ?>
 
-<?php startblock('header') ?>
-  <h1>Employee <small>Control panel</small> <button type="button" class="btn btn-sm btn-primary pull-right" data-toggle="modal" data-target="#modal-add-employee">Add Employee</button></h1>
+<?php
+  if(isset($_POST['submit'])){
+    $fname = $_POST['firstname'];
+    $lname = $_POST['lastname'];
+    $area = $_POST['area'];
 
+    $employee->addEmployee($fname, $lname, $area);
+  }
+?>
+
+<?php startblock('header') ?>
+  <h1>Employees <small>Control panel</small> <button type="button" class="btn btn-sm btn-primary pull-right" data-toggle="modal" data-target="#modal-add-employee">Add Employee</button></h1>
+  <?php
+    if(isset($_GET['success'])) {
+  ?>
+    <br/>
+    <div class="alert alert-success alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <h4><i class="icon fa fa-check"></i> Success!</h4>
+      Added to the Database
+    </div>
+  <?php } ?>
   	<div class="modal fade" id="modal-add-employee">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -11,14 +30,14 @@
                   <span aria-hidden="true">×</span></button>
                 <h4 class="modal-title">Add Employee</h4>
               </div>
-              <form class="form-horizontal">
+              <form class="form-horizontal" method="POST">
 	              <div class="modal-body">
 	                	<div class="form-group">
 	                		<label for="firstname" class="col-sm-3 control-label">
 	                			First Name
 	                		</label>
 	                		<div class="col-sm-9">
-	                    		<input type="text" class="form-control" id="firstname" placeholder="First Name">
+	                    		<input type="text" class="form-control" name="firstname" placeholder="First Name">
 	                  		</div>
 	                	</div>
 	                	<div class="form-group">
@@ -26,7 +45,7 @@
 	                			Last Name
 	                		</label>
 	                		<div class="col-sm-9">
-	                    		<input type="text" class="form-control" id="lastname" placeholder="Last Name">
+	                    		<input type="text" class="form-control" name="lastname" placeholder="Last Name">
 	                  		</div>
 	                	</div>
 	                	<div class="form-group">
@@ -34,14 +53,13 @@
 	                			Area
 	                		</label>
 	                		<div class="col-sm-9">
-	                    		<input type="text" class="form-control" id="area" placeholder="Area">
+	                    		<input type="text" class="form-control" name="area" placeholder="Area">
 	                  		</div>
 	                	</div>
-	                </form>
 	              </div>
 	              <div class="modal-footer">
 	                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-	                <button type="button" class="btn btn-primary">Save</button>
+	                <button type="submit" name="submit" value="submit" class="btn btn-primary">Save</button>
 	              </div>
               </form>
             </div>
@@ -85,23 +103,32 @@
 	              	<table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
 	            		<thead>
 	                	<tr role="row">
-		                	<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
+		                	<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">
 		                		Name
 		                	</th>
-		                	<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">
+		                	<th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Area: activate to sort column ascending">
 		                		Area
+		                	</th>
+		                	<th>
+		                		Action
 		                	</th>
 	               		</tr>
 	                	</thead>
 		                <tbody>
-			                <tr role="row" class="odd">
-			                  <td class="sorting_1">Gecko</td>
-			                  <td>Firefox 1.0</td>
-			                  <td>
-			                  	<a href="#" class="btn btn-sm btn-warning">Update</a>
-			                  	<a href="#" class="btn btn-sm btn-danger">Delete</a>
-			                  </td>
-			                </tr>
+                      <?php
+              					foreach ($employee->viewAllEmployees() as $user) {
+                      ?>
+                          <tr role="row" class="odd">
+                            <td class="sorting_1"><?php echo $user['lastName'].', '.$user['firstName'] ?></td>
+                            <td><?php echo $user['area'] ?></td>
+                            <td>
+                              <a href="#" class="btn btn-sm btn-warning">Update</a>
+                              <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+    			                </tr>
+                      <?php } ?>
+
+
 		                </tbody>
 					</table>
 				</div>

@@ -48,6 +48,8 @@ require 'ti.php';
 
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="dist/css/select2.min.css">
+
 </head>
 <body class="hold-transition sidebar-mini skin-purple">
 <div class="wrapper">
@@ -123,6 +125,12 @@ require 'ti.php';
             <span>Employee</span>
           </a>
         </li>
+        <li>
+          <a href="meter.php">
+            <i class="fa fa-users"></i>
+            <span>Meter Reading</span>
+          </a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -189,7 +197,10 @@ require 'ti.php';
 <script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
+<script src="dist/js/select2.min.js"></script>
+
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+
 </body>
 </html>

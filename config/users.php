@@ -3,7 +3,7 @@
 /**
  *
  */
-class ClassClient
+class ClassUser
 {
     private $db;
 
@@ -14,7 +14,7 @@ class ClassClient
 
     public function login($username, $password)
     {
-      $query = $this->db->prepare("INSERT INTO `admin` (`username`, `password`) VALUES(?,?)");
+      $query = $this->db->prepare("SELECT * FROM `user` WHERE `username`=(?) and `password`=(?)");
 
       $query->bindValue(1, $username);
       $query->bindValue(2, $password);
@@ -24,13 +24,17 @@ class ClassClient
           $count = $query->rowCount();
 
           if ($count > 0) {
+              $data = $query->fetch();
+
               $_SESSION['login_user'] = $username;
+              $_SESSION['role'] = $data['role'];
+              $_SESSION['user_id'] = $data['id'];
               header("Location: index.php");
           } else {
               header("Location: login.php?error=true");
           }
       } catch (PDOException $ex) {
-          $query->rollBack();
+          #$query->rollBack();
           die($ex->getMessage());
       }
     }
