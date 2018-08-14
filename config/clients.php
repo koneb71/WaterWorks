@@ -65,7 +65,7 @@ class ClassClients
 
     public function viewAllClient()
     {
-        $query = $this->db->prepare("SELECT * FROM `client`");
+        $query = $this->db->prepare("SELECT `client`.`id`, `client`.`accountNumber`, `client`.`meterSerialNumber`, `client`.`firstName`, `client`.`lastName`, `client`.`middleInitial`, `client`.`mobileNumber`, `client`.`rateClass`, `client`.`businessArea`, `client`.`streetAddress`, `client`.`city`, `client`.`postalCode` FROM `client`");
         $get = Array();
 
         try {

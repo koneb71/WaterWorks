@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `waterworks`.`User` (
 -- Table `waterworks`.`BillingRate`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `waterworks`.`BillingRate` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   `rate` FLOAT NULL,
   `created_time` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
@@ -71,7 +71,7 @@ ENGINE = InnoDB;
 -- Table `waterworks`.`Employee`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `waterworks`.`Employee` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `firstName` VARCHAR(45) NULL,
   `lastName` VARCHAR(45) NULL,
   `area` VARCHAR(255) NULL,
@@ -83,7 +83,7 @@ ENGINE = InnoDB;
 -- Table `waterworks`.`MeterReading`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `waterworks`.`MeterReading` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `Accountant_id` INT NOT NULL,
   `Client_id` INT NOT NULL,
   `Employee_id` INT NOT NULL,
@@ -156,7 +156,7 @@ ENGINE = InnoDB;
 -- Table `waterworks`.`Report`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `waterworks`.`Report` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `Client_id` INT NOT NULL,
   `Collection_id` INT NOT NULL,
   `created_time` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
@@ -179,3 +179,4 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+waterworks

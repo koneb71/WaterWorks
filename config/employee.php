@@ -57,7 +57,7 @@ class ClassEmployee
 
     public function viewAllEmployees()
     {
-        $query = $this->db->prepare("SELECT * FROM `employee`");
+        $query = $this->db->prepare("SELECT `employee`.`id`, `employee`.`firstName`, `employee`.`lastName`, `employee`.`area` FROM `employee`");
         $get = Array();
 
         try {

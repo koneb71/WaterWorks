@@ -28,6 +28,7 @@ require 'ti.php';
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="dist/css/dataTables.bootstrap.min.css">
   <!-- Morris chart -->
   <link rel="stylesheet" href="bower_components/morris.js/morris.css">
   <!-- jvectormap -->
@@ -200,6 +201,8 @@ require 'ti.php';
 <script src="dist/js/select2.min.js"></script>
 
 <!-- AdminLTE for demo purposes -->
+<script src="dist/js/jquery.dataTables.min.js"></script>
+<script src="dist/js/dataTables.bootstrap.min.js"></script>
 <script src="dist/js/demo.js"></script>
 
 </body>

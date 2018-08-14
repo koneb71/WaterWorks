@@ -14,11 +14,11 @@ class ClassMeter
 
     public function newReading($accountant, $client_id , $employee_id, $waterUsage)
     {
-        $query = $this->db->prepare("INSERT INTO `meterreading` (`Accountant_id`, `Client_id`, `Employee_id`, `waterUsage`) VALUES(?,?,?,?)");
+        $query = $this->db->prepare('INSERT INTO `meterreading` (`Accountant_id`, `Client_id`, `Employee_id`, `waterUsage`) VALUES(?,?,?,?)');
 
-        $query->bindValue(1, $accountant);
-        $query->bindValue(2, $client_id);
-        $query->bindValue(3, $employee_id);
+        $query->bindValue(1, (int)$accountant);
+        $query->bindValue(2, (int)$client_id);
+        $query->bindValue(3, (int)$employee_id);
         $query->bindValue(4, (int)$waterUsage);
 
         try {
@@ -26,9 +26,9 @@ class ClassMeter
             $count = $query->rowCount();
 
             if ($count > 0) {
-                header("Location: meter.php?success=yes");
+                echo "<script> location.href='meter.php?success=yes'; </script>";
             } else {
-                header("Location: meter.php?success=no");
+                echo "<script> location.href='meter.php?success=no'; </script>";
             }
         } catch (PDOException $ex) {
             #$query->rollBack();

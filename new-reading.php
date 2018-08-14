@@ -37,7 +37,7 @@
                                 <?php
                                     foreach ($client->viewAllClient() as $user){
                                 ?>
-                                        <option value="<?php $user['id'] ?>"> <?php echo $user['lastName'].', '.$user['firstName'].' '.$user['middleInitial'].',' ?></option>
+                                        <option value="<?php echo $user['id'] ?>"> <?php echo $user['lastName'].', '.$user['firstName'].' '.$user['middleInitial'].',' ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -51,7 +51,7 @@
                                 <?php
                                     foreach ($employee->viewAllEmployees() as $user){
                                 ?>
-                                        <option value="<?php $user['id'] ?>"> <?php echo $user['lastName'].', '.$user['firstName']?></option>
+                                        <option value="<?php echo $user['id'] ?>"> <?php echo $user['lastName'].', '.$user['firstName']?></option>
                                 <?php } ?>
                             </select>
                         </div>

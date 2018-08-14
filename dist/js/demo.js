@@ -13,6 +13,7 @@ $(function () {
 
     $('.selectClient').select2();
     $('.selectEmployee').select2();
+    $('#dynamic-table').DataTable();
 
     $('[data-toggle="control-sidebar"]').controlSidebar()
     $('[data-toggle="push-menu"]').pushMenu()
