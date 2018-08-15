@@ -2,7 +2,6 @@
 
 <?php
   if(isset($_POST['submit'])){
-    $accNum = $_POST['accountNumber'];
     $meterSerial = $_POST['meterSerialNumber'];
     $firstname = $_POST['firstName'];
     $lastname = $_POST['lastName'];
@@ -15,7 +14,7 @@
     $postal = $_POST['postalCode'];
 
 
-    $client->addClient($accNum, $meterSerial, $firstname, $lastname, $mInitial, $mobileNum, $rateClass, $businessArea, $streetAdd, $city, $postal);
+    $client->addClient($meterSerial, $firstname, $lastname, $mInitial, $mobileNum, $rateClass, $businessArea, $streetAdd, $city, $postal);
   }
 ?>
 
@@ -42,19 +41,11 @@
               <form class="form-horizontal" method="POST">
 	              <div class="modal-body">
 	                	<div class="form-group">
-	                		<label for="accountNumber" class="col-sm-3 control-label">
-	                			Account Number
-	                		</label>
-	                		<div class="col-sm-9">
-	                    		<input type="Number" class="form-control" name="accountNumber" placeholder="Account Number">
-	                  		</div>
-	                	</div>
-	                	<div class="form-group">
 	                		<label for="meterSerialNumber" class="col-sm-3 control-label">
 	                			Meter Serial Number
 	                		</label>
 	                		<div class="col-sm-9">
-	                    		<input type="text" class="form-control" name="firstName" placeholder="Meter Serial Number">
+	                    		<input type="text" class="form-control" name="meterSerialNumber" placeholder="Meter Serial Number">
 	                  		</div>
 	                	</div>
 	                	<div class="form-group">

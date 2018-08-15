@@ -12,14 +12,20 @@ class ClassMeter
         $this->db = $database;
     }
 
-    public function newReading($accountant, $client_id , $employee_id, $waterUsage)
+    public function newReading($client_id , $billing_rate, $employee_id, $waterUsage, $totalAmount)
     {
-        $query = $this->db->prepare('INSERT INTO `meterreading` (`Accountant_id`, `Client_id`, `Employee_id`, `waterUsage`) VALUES(?,?,?,?)');
+        $query = $this->db->prepare("INSERT INTO `collection` (`Teller_id`, `Client_id`, `BillingRate_id`, `Employee_id`, `waterUsage`, `totalAmount`, `dueDate`, `isPaid`) VALUES(?,?,?,?,?,?,?,?)");
+        $time = strtotime(date('Y-m-d'));
+        $final = date("Y-m-d", strtotime("+1 month", $time));
 
-        $query->bindValue(1, (int)$accountant);
-        $query->bindValue(2, (int)$client_id);
-        $query->bindValue(3, (int)$employee_id);
-        $query->bindValue(4, (int)$waterUsage);
+        $query->bindValue(1, (string)$_SESSION['user_id']);
+        $query->bindValue(2, (string)$client_id);
+        $query->bindValue(3, (string)$billing_rate);
+        $query->bindValue(4, (string)$employee_id);
+        $query->bindValue(5, (string)$waterUsage);
+        $query->bindValue(6, (string)$totalAmount);
+        $query->bindValue(7, (string)$final);
+        $query->bindValue(8, (string)0);
 
         try {
             $query->execute();
@@ -37,9 +43,9 @@ class ClassMeter
 
     }
 
-    public function viewAllMeterReading()
+    public function viewAllcollection()
     {
-        $query = $this->db->prepare("SELECT `meterreading`.`created_date`, `meterreading`.`waterUsage`, `user`.`lastName`, `user`.`middleInitial`, `user`.`firstName`, `client`.`lastName`, `client`.`middleInitial`, `client`.`firstName`, `employee`.`firstName`, `employee`.`lastName` FROM `meterreading` RIGHT JOIN `user` ON `user`.`id` = `meterreading`.`Accountant_id` INNER JOIN `client` ON `client`.`id` = `meterreading`.`Client_id` INNER JOIN `employee` ON `employee`.`id` = `meterreading`.`Employee_id`");
+        $query = $this->db->prepare("SELECT `collection`.`created_time`, `collection`.`waterUsage`, `user`.`lastName`, `user`.`middleInitial`, `user`.`firstName`, `client`.`lastName`, `client`.`middleInitial`, `client`.`firstName`, `employee`.`firstName`, `employee`.`lastName` , `collection`.`waterUsage` , `collection`.`totalAmount`, `collection`.`dueDate` , `collection`.`isPaid` FROM `collection` RIGHT JOIN `user` ON `user`.`id` = `collection`.`Teller_id` INNER JOIN `client` ON `client`.`id` = `collection`.`Client_id` INNER JOIN `employee` ON `employee`.`id` = `collection`.`Employee_id`");
         $get = Array();
 
         try {

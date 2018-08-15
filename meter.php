@@ -28,32 +28,46 @@ if(isset($_GET['success'])) {
                         <table id="dynamic-table" class="table table-striped table-bordered" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Accountant</th>
+                            <th>Teller</th>
                             <th>Client</th>
                             <th>Employee</th>
                             <th>Water Usage</th>
+                            <th>Rate</th>
+                            <th>Total Amount</th>
                             <th>Created Date</th>
+                            <th>Due Date</th>
+                            <th>Paid</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                         <tbody>
                         <?php
-                        foreach ($meter->viewAllMeterReading() as $reading) {
+                        foreach ($meter->viewAllcollection() as $reading) {
                             ?>
-                            <tr role="row" class="odd">
-                                <td class="sorting_1"><?php echo $reading[2].', '.$reading[4].' '.$reading[3].',' ?></td>
+                            <tr role="row">
+                                <td><?php echo $reading[2].', '.$reading[4].' '.$reading[3].',' ?></td>
                                 <td><?php echo $reading[5].', '.$reading[7].' '.$reading[6].',' ?></td>
                                 <td><?php echo $reading[9].', '.$reading[8] ?></td>
                                 <td><?php echo $reading[1] ?></td>
+                                <td><?php echo $reading[10] ?></td>
+                                <td><?php echo $reading[11] ?></td>
                                 <td><?php echo $reading[0] ?></td>
+                                <td><?php echo $reading[12] ?></td>
+                                <td><?php
+                                    if($reading[13] == 0){
+                                        echo 'No';
+                                    }
+                                    else {
+                                        echo 'Yes';
+                                    }
+                                    ?>
+                                </td>
                                 <td>
-                                    <a href="#" class="btn btn-sm btn-warning">Update</a>
-                                    <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                                    <a href="#" class="btn btn-xs btn-warning">Update</a>
+                                    <a href="#" class="btn btn-xs btn-danger">Delete</a>
                                 </td>
                             </tr>
                         <?php } ?>
-
-
                         </tbody>
                         <tfoot>
                         <tr>
@@ -68,7 +82,7 @@ if(isset($_GET['success'])) {
                     </table>
                 </div>
             </div>
-            
+
     </div>
     <!-- /.box-body -->
 </div>

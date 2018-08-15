@@ -12,11 +12,11 @@ class ClassClients
         $this->db = $database;
     }
 
-    public function addClient($accNum, $meterSerial, $firstname, $lastname, $mInitial, $mobileNum, $rateClass, $businessArea, $streetAdd, $city, $postal)
+    public function addClient($meterSerial, $firstname, $lastname, $mInitial, $mobileNum, $rateClass, $businessArea, $streetAdd, $city, $postal)
     {
         $query = $this->db->prepare("INSERT INTO `client` (`accountNumber`, `meterSerialNumber`, `firstName`, `lastName`, `middleInitial`, `mobileNumber`, `rateClass`, `businessArea`, `streetAddress`, `city`, `postalCode` ) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
 
-        $query->bindValue(1, $accNum);
+        $query->bindValue(1, strtoupper(abs(crc32(uniqid()))));
         $query->bindValue(2, $meterSerial);
         $query->bindValue(3, $firstname);
         $query->bindValue(4, $lastname);

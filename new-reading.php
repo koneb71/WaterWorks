@@ -7,11 +7,12 @@
 <?php
     if(isset($_POST['submit'])){
         $client_id = $_POST['client'];
-        $accountant_id = $_SESSION['user_id'];
         $employee_id = $_POST['employee'];
+        $billingRate = $_POST['rate'];
         $water_usage = $_POST['waterUsage'];
+        $totalAmount = $_POST['totalAmount'];
 
-        $meter->newReading($accountant_id, $client_id, $employee_id, $water_usage);
+        $meter->newReading($client_id, $employee_id, $billingRate, $water_usage, $totalAmount);
     }
 ?>
 
@@ -56,13 +57,35 @@
                             </select>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="rate" class="col-sm-3 control-label">
+                            Rate
+                        </label>
+                        <div class="col-sm-9">
+                            <select class="selectClient form-control" id="rate" name="rate">
+                                <?php
+                                    foreach ($rate->viewAllRates() as $user){
+                                ?>
+                                        <option value="<?php echo $user['id'] ?>"> <?php echo $user['rate'] ?></option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <label for="waterUsage" class="col-sm-3 control-label">
                             Water Usage
                         </label>
                         <div class="col-sm-9">
-                            <input type="Number" class="form-control" name="waterUsage" placeholder="Water Usage">
+                            <input type="Number" class="form-control" value="0" name="waterUsage" id="waterUsage" placeholder="Water Usage">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="totalAmount" class="col-sm-3 control-label">
+                            Total Amount (P)
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="Number" class="form-control" name="totalAmount" id="totalAmount" value="0" placeholder="Total Amount" readonly="readonly">
                         </div>
                     </div>
                 </div>

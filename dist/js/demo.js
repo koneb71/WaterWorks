@@ -68,6 +68,25 @@ $(function () {
      * @param String val Value of the setting
      * @returns void
      */
+
+    $("#rate").change(function() {
+        var rate = parseFloat($('#rate').find(":selected").text()) || 0;
+        var usage = parseFloat($('#waterUsage').val()) || 0;
+
+        var total = rate * usage;
+
+        $('#totalAmount').val(total);
+    });
+
+    $("#waterUsage").change(function() {
+        var rate = parseFloat($('#rate').find(":selected").text()) || 0;
+        var usage = parseFloat($('#waterUsage').val()) || 0;
+
+        var total = rate * usage;
+
+        $('#totalAmount').val(total);
+    });
+
     function store(name, val) {
         if (typeof (Storage) !== 'undefined') {
             localStorage.setItem(name, val)

@@ -4,7 +4,7 @@
 		'host' => 'localhost' ,
 		'username' => 'root' ,
 		'password' => '' ,
-		'dbname' => 'waterworks'
+		'dbname' => 'waterworks2'
 		);
 
 	//connect to dataBase

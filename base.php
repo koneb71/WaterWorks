@@ -127,6 +127,12 @@ require 'ti.php';
           </a>
         </li>
         <li>
+          <a href="billing-rate.php">
+            <i class="fa fa-users"></i>
+            <span>Billing Rate</span>
+          </a>
+        </li>
+        <li>
           <a href="meter.php">
             <i class="fa fa-users"></i>
             <span>Meter Reading</span>
