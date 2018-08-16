@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="abd1b415-0d84-46f1-87a7-1f07accce36b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/base.php" beforeDir="false" afterPath="$PROJECT_DIR$/base.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client.php" beforeDir="false" afterPath="$PROJECT_DIR$/client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/DataBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/DataBase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/Init.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/Init.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/clients.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/clients.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/meter.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/meter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/meter.php" beforeDir="false" afterPath="$PROJECT_DIR$/meter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new-reading.php" beforeDir="false" afterPath="$PROJECT_DIR$/new-reading.php" afterDir="false" />
-    </list>
+    <list default="true" id="abd1b415-0d84-46f1-87a7-1f07accce36b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +15,7 @@
     <session id="-1897508224">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.3" value="1" />
@@ -189,8 +178,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new-reading.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="58" column="26" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="58" selection-end-column="26" />
+            <state relative-caret-position="111">
+              <caret line="70" column="11" selection-start-line="70" selection-start-column="11" selection-end-line="70" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -376,18 +365,18 @@
       <workItem from="1533964790191" duration="8162000" />
       <workItem from="1534185710123" duration="39000" />
       <workItem from="1534185857356" duration="9211000" />
-      <workItem from="1534304989449" duration="7467000" />
+      <workItem from="1534304989449" duration="8477000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24879000" />
+    <option name="totallyTimeSpent" value="25889000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20347957" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20347957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Grunt " order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -401,7 +390,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32850242" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32850242" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -598,8 +587,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/new-reading.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="58" column="26" lean-forward="true" selection-start-line="45" selection-start-column="20" selection-end-line="58" selection-end-column="26" />
+        <state relative-caret-position="111">
+          <caret line="70" column="11" selection-start-line="70" selection-start-column="11" selection-end-line="70" selection-end-column="11" />
         </state>
       </provider>
     </entry>
