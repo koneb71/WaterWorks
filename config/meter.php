@@ -14,7 +14,7 @@ class ClassMeter
 
     public function newReading($client_id , $billing_rate, $employee_id, $waterUsage, $totalAmount)
     {
-        $query = $this->db->prepare("INSERT INTO `collection` (`Teller_id`, `Client_id`, `BillingRate_id`, `Employee_id`, `waterUsage`, `totalAmount`, `dueDate`, `isPaid`) VALUES(?,?,?,?,?,?,?,?)");
+        $query = $this->db->prepare("INSERT INTO `collection` (`Teller_id`, `Client_id`, `billingRate_id`, `Employee_id`, `waterUsage`, `totalAmount`, `dueDate`, `isPaid`) VALUES(?,?,?,?,?,?,?,?)");
         $time = strtotime(date('Y-m-d'));
         $final = date("Y-m-d", strtotime("+1 month", $time));
 

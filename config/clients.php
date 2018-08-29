@@ -14,6 +14,10 @@ class ClassClients
 
     public function addClient($meterSerial, $firstname, $lastname, $mInitial, $mobileNum, $rateClass, $businessArea, $streetAdd, $city, $postal)
     {
+        if($meterSerial == ""){
+            $meterSerial = strtoupper(abs(crc32(uniqid())));
+        }
+
         $query = $this->db->prepare("INSERT INTO `client` (`accountNumber`, `meterSerialNumber`, `firstName`, `lastName`, `middleInitial`, `mobileNumber`, `rateClass`, `businessArea`, `streetAddress`, `city`, `postalCode` ) VALUES(?,?,?,?,?,?,?,?,?,?,?)");
 
         $query->bindValue(1, strtoupper(abs(crc32(uniqid()))));

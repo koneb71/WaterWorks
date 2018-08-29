@@ -44,7 +44,7 @@ if(isset($_GET['success'])) {
                             Rate
                         </label>
                         <div class="col-sm-9">
-                            <input type="number" class="form-control" name="rate" placeholder="Rate Value">
+                            <input type="number" class="form-control" name="rate" step="any" placeholder="Rate Value">
                         </div>
                     </div>
                 </div>

@@ -71,11 +71,15 @@ if(isset($_GET['success'])) {
                         </tbody>
                         <tfoot>
                         <tr>
-                            <th>Accountant</th>
+                            <th>Teller</th>
                             <th>Client</th>
                             <th>Employee</th>
                             <th>Water Usage</th>
+                            <th>Rate</th>
+                            <th>Total Amount</th>
                             <th>Created Date</th>
+                            <th>Due Date</th>
+                            <th>Paid</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>

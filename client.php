@@ -19,7 +19,7 @@
 ?>
 
 <?php startblock('header') ?>
-  <h1>Employee <small>Control panel</small> <button type="button" class="btn btn-sm btn-primary pull-right" data-toggle="modal" data-target="#modal-add-client">Add Client</button></h1>
+  <h1>Client <small>Control panel</small> <button type="button" class="btn btn-sm btn-primary pull-right" data-toggle="modal" data-target="#modal-add-client">Add Client</button></h1>
   <?php
     if(isset($_GET['success'])) {
   ?>
